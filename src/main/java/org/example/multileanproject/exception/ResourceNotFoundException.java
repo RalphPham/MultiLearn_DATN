@@ -1,0 +1,13 @@
+package org.example.multileanproject.exception;
+public class ResourceNotFoundException extends RuntimeException {
+
+    public ResourceNotFoundException(String message) {
+        super(message);
+    }
+    public ResourceNotFoundException(String message, Throwable cause) {
+        super(message, cause);
+    }
+    public ResourceNotFoundException(String resourceName, String fieldName, Object fieldValue) {
+        super(String.format("Không tìm thấy %s với %s = '%s'", resourceName, fieldName, fieldValue));
+    }
+}
