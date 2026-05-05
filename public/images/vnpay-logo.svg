@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 240" role="img" aria-label="VNPAY">
+  <!-- Dark blue card tilted left, behind -->
+  <g transform="rotate(-14 110 90)">
+    <rect x="40" y="40" width="140" height="100" rx="14" ry="14" fill="#1B3A8A"/>
+  </g>
+
+  <!-- Red card tilted right, in front -->
+  <g transform="rotate(12 110 100)">
+    <rect x="40" y="50" width="140" height="100" rx="14" ry="14" fill="#E2231A"/>
+
+    <!-- White fingerprint on red card -->
+    <g fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round">
+      <path d="M78 110 C78 86, 96 70, 110 70 C124 70, 142 86, 142 110"/>
+      <path d="M86 116 C86 94, 99 80, 110 80 C121 80, 134 94, 134 116"/>
+      <path d="M94 122 C94 104, 102 90, 110 90 C118 90, 126 104, 126 122"/>
+      <path d="M102 126 C102 114, 105 102, 110 102 C115 102, 118 114, 118 126"/>
+    </g>
+    <circle cx="110" cy="112" r="3.5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- VNPAY wordmark -->
+  <text x="110" y="206" text-anchor="middle"
+        font-family="Arial Black, Helvetica, Arial, sans-serif"
+        font-size="36" font-weight="900" fill="#E2231A" letter-spacing="1.5">VNPAY</text>
+
+  <!-- Tagline -->
+  <text x="110" y="228" text-anchor="middle"
+        font-family="Arial, sans-serif" font-size="11" font-style="italic" fill="#1B3A8A">
+    Cho cuộc sống đơn giản hơn
+  </text>
+</svg>

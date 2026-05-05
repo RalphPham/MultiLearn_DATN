@@ -1,0 +1,148 @@
+{
+  "nav": {
+    "home": "Home",
+    "courses": "Courses",
+    "blog": "Blog"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "login_prompt": "You need to login to perform this action. Go to login page?"
+  },
+  "user_menu": {
+    "profile": "My Profile",
+    "my_courses": "My Courses",
+    "wishlist": "My Wishlist",
+    "transactions": "Transaction History"
+  },
+  "roles": {
+    "student": "STUDENT",
+    "instructor": "INSTRUCTOR",
+    "member": "MEMBER"
+  },
+  "search_placeholder": "Search for courses...",
+  "home": {
+    "hero_badge": "Real-world Coding Platform",
+    "hero_title_1": "Kickstart Your",
+    "hero_title_2": "Tech Career",
+    "hero_desc": "Access hundreds of high-quality courses from top experts. Learn anytime, anywhere, master future technologies.",
+    "explore_now": "Explore Now",
+    "read_news": "Read News",
+    "community_title": "MultiLearn Community",
+    "community_desc": "Conquer Knowledge Peaks Together",
+    "quality_badge": "Certified Quality",
+    "quality_sub": "By Google & Facebook Experts",
+    "stats": {
+      "students": "Students Joined",
+      "courses": "Online Courses",
+      "instructors": "Top Instructors",
+      "rating": "Average Rating"
+    },
+    "featured_title": "Featured Courses",
+    "featured_desc": "Most Loved Courses By The Community This Week",
+    "view_all": "View All Courses",
+    "no_courses_title": "System Updating",
+    "no_courses_desc": "No courses available at the moment.",
+    "discover_btn": "Discover Knowledge"
+  },
+  "filter": {
+    "title": "Filter",
+    "category": "Category",
+    "price_range": "Price Range",
+    "min": "Min Price",
+    "max": "Max Price",
+    "apply": "Apply",
+    "reset": "Reset",
+    "showing": "Showing {count} results",
+    "loading": "Loading data...",
+    "no_result": "No matching results found.",
+    "prev": "Prev",
+    "next": "Next",
+    "page": "Page"
+  },
+  "course": {
+    "students": "students",
+    "loading": "Loading Course Data...",
+    "last_updated": "Last Updated",
+    "author": "Instructor",
+    "view_details": "View Details",
+    "what_you_learn": "What You'll Learn",
+    "curriculum": "Course Curriculum",
+    "chapter": "Chapter",
+    "lessons": "lessons",
+    "duration_video": "on-demand video",
+    "preview": "PREVIEW",
+    "description": "Description",
+    "buy_now": "BUY NOW",
+    "add_cart": "ADD TO CART",
+    "add_cart_success": "Added course to cart!",
+    "owned": "You Own This Course",
+    "start_learning": "START LEARNING",
+    "includes": "This Course Includes:",
+    "lifetime_access": "Full Lifetime Access",
+    "certificate": "Certificate of Completion",
+    "all_devices": "Access on Mobile and TV",
+    "not_found": "Course Not Found",
+    "back_to_list": "Back To List",
+    "confirm_buy": "Confirm purchase: {courseName}?",
+    "buy_success": "Purchase successful! You can start learning now."
+  },
+  "profile": {
+    "title": "Personal Information",
+    "subtitle": "Manage your profile information for account security",
+    "choose_photo": "Choose Photo",
+    "choose_new": "Choose New Photo",
+    "uploading": "Uploading...",
+    "photo_hint": "Format: JPEG, PNG. Max 2MB.",
+    "fullname": "Full Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "save": "Save Changes",
+    "saving": "Saving...",
+    "success": "Profile updated successfully!",
+    "error_size": "Image too large (>2MB). Please choose a smaller one."
+  },
+  "my_courses": {
+    "title": "My Courses",
+    "subtitle": "Courses you have enrolled in and have lifetime access to",
+    "empty_title": "You Don't Own Any Courses Yet",
+    "empty_desc": "Only successfully purchased courses will appear here.",
+    "explore_btn": "Explore Courses Now",
+    "owned_badge": "Owned"
+  },
+  "wishlist": {
+    "title": "My Wishlist",
+    "subtitle": "Save courses you are interested in for later",
+    "count_unit": "courses",
+    "empty_title": "Wishlist Is Empty",
+    "empty_desc": "Haven't liked any courses yet? Browse around and save some useful courses!",
+    "explore_btn": "Explore Courses Now",
+    "remove_tooltip": "Remove from list",
+    "confirm_remove": "Are you sure you want to remove this course from wishlist?"
+  },
+  "transactions": {
+    "title": "Transaction History",
+    "subtitle": "Track your order status",
+    "count_unit": "orders",
+    "empty_title": "No Transactions Yet",
+    "empty_desc": "You haven't made any transactions. Explore courses now!",
+    "explore_btn": "Explore Courses",
+    "total_amount": "Total Amount"
+  },
+  "footer": {
+    "desc": "Leading online learning platform, connecting knowledge, elevating careers.",
+    "discover": "Discover",
+    "support": "Support",
+    "contact": "Contact",
+    "help_center": "Help Center",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy"
+  },
+  "common": {
+    "free": "Free",
+    "error": "Error",
+    "success": "Success"
+  },
+  "⚙️ Quản Lý Khóa Học Này": "⚙️ Manage This Course"
+}
