@@ -1,37 +1,37 @@
 # EduStar Marketplace - Backend
 
-Spring Boot backend cho he thong EduStar Marketplace (do an tot nghiep).
+Backend Spring Boot cho hệ thống EduStar Marketplace (đồ án tốt nghiệp).
 
-## Cong nghe
+## Công nghệ
 
 - Java 17+, Spring Boot 3.x, Spring Data JPA
 - SQL Server
-- MinIO (luu tru file)
+- MinIO (lưu trữ file)
 - Gemini AI
 - VNPay (sandbox)
 - JWT auth
 - Gmail SMTP
 
-## Yeu cau truoc khi chay
+## Yêu cầu trước khi chạy
 
-1. **Java 17** tro len
-2. **SQL Server** (co the dung Docker hoac SSMS)
-3. **MinIO** (chay bang docker-compose hoac binary)
-4. **Maven** (hoac dung mvnw)
+1. **Java 17** trở lên
+2. **SQL Server** (có thể dùng Docker hoặc cài SSMS)
+3. **MinIO** (chạy bằng docker-compose hoặc binary)
+4. **Maven** (hoặc dùng `mvnw` đi kèm)
 
-## Cau hinh
+## Cấu hình
 
-Tat ca cau hinh nam o `src/main/resources/application.properties`. Cac gia tri co dang `YOUR_..._HERE` la cac chuoi placeholder, **ban can thay bang gia tri that** truoc khi chay:
+Tất cả cấu hình nằm ở `src/main/resources/application.properties`. Các giá trị có dạng `YOUR_..._HERE` là chuỗi placeholder — **bạn cần thay bằng giá trị thật** trước khi chạy:
 
-| Bien                 | Y nghia                                     | Cach lay |
+| Biến                 | Ý nghĩa                                     | Cách lấy |
 |----------------------|---------------------------------------------|----------|
-| `DB_USERNAME` / `DB_PASSWORD` | Tai khoan SQL Server                | Tu cau hinh khi cai SQL Server |
+| `DB_USERNAME` / `DB_PASSWORD` | Tài khoản SQL Server                | Tự cấu hình khi cài SQL Server |
 | `MAIL_USERNAME` / `MAIL_PASSWORD` | Gmail + App Password            | https://myaccount.google.com/apppasswords |
 | `GEMINI_API_KEY`     | Google Gemini AI key                        | https://aistudio.google.com/apikey |
-| `JWT_SECRET`         | Chuoi base64 ngau nhien (>= 256 bit)         | `openssl rand -base64 64` |
-| `MINIO_ACCESS_KEY` / `MINIO_SECRET_KEY` | Tai khoan MinIO          | MinIO console |
+| `JWT_SECRET`         | Chuỗi base64 ngẫu nhiên (≥ 256 bit)         | `openssl rand -base64 64` |
+| `MINIO_ACCESS_KEY` / `MINIO_SECRET_KEY` | Tài khoản MinIO          | MinIO console |
 
-Co the set qua bien moi truong (khuyen nghi) hoac sua truc tiep trong file. Vi du tren Windows PowerShell:
+Có thể set qua biến môi trường (khuyến nghị) hoặc sửa trực tiếp trong file. Ví dụ trên Windows PowerShell:
 
 ```powershell
 $env:GEMINI_API_KEY = "AIza..."
@@ -39,78 +39,80 @@ $env:JWT_SECRET = "your-base64-secret"
 .\mvnw spring-boot:run
 ```
 
-## Khoi tao database
+## Khởi tạo database
 
-File backup nam o **branch `database`** cua repo nay. Checkout sang branch do de tai:
+File backup nằm ở **branch `database`** của repo này. Checkout sang branch đó để tải:
 
 ```bash
 git checkout database
-# se thay file EduMarketplace.bak + huong dan restore o README.md
+# sẽ thấy file EduMarketplace.bak + hướng dẫn restore ở README.md
 ```
 
-Hoac vao GitHub → doi branch sang `database` → tai file `.bak`.
+Hoặc vào GitHub → đổi branch sang `database` → tải file `.bak`.
 
-JPA chay che do `validate` → schema phai khop voi entity → **bat buoc restore tu file .bak** truoc khi chay backend.
+JPA chạy chế độ `validate` → schema phải khớp với entity → **bắt buộc restore từ file .bak** trước khi chạy backend.
 
-## Khoi tao MinIO
+## Khởi tạo MinIO
 
-### Buoc 1: Chay MinIO
+### Bước 1: Chạy MinIO
 
-`docker-compose.yml` da co san service `edustar-minio`. Chay:
+`docker-compose.yml` đã có sẵn service `edustar-minio`. Chạy:
 
 ```bash
 docker-compose up -d
 ```
 
-MinIO se chay tai:
+MinIO sẽ chạy tại:
 - API S3: http://127.0.0.1:9000
 - Console: http://127.0.0.1:9001 (login `minioadmin` / `minioadmin`)
 
-Hoac neu khong dung Docker, tai MinIO binary tai https://min.io/download → chay:
+Hoặc nếu không dùng Docker, tải MinIO binary tại https://min.io/download → chạy:
 ```powershell
 .\minio.exe server C:\minio\data --console-address ":9001"
 ```
 
-### Buoc 2: Khoi phuc du lieu (video, anh khoa hoc)
+### Bước 2: Khôi phục dữ liệu (video, ảnh khoá học)
 
-Du lieu media (video bai giang, anh khoa hoc, certificate...) **khong di kem** trong repo do dung luong lon (~2.7 GB).
+Dữ liệu media (video bài giảng, ảnh khoá học, certificate...) **không đi kèm** trong repo do dung lượng lớn (~2.7 GB).
 
-**Tai du lieu tai:** https://drive.google.com/drive/folders/1fvqwssXc0nU3w4H0LaLm2tvb23MYd2fc?usp=drive_link
+**Tải dữ liệu tại:** https://drive.google.com/drive/folders/1fvqwssXc0nU3w4H0LaLm2tvb23MYd2fc?usp=drive_link
 
-Sau khi tai ve duoc file `minio-uploads.zip`:
-- **Neu dung Docker**: giai nen `uploads/` vao thu muc `minio-data/` ben canh `docker-compose.yml`. Cau truc: `minio-data/uploads/<cac file>`
-- **Neu dung MinIO binary**: giai nen vao `<minio-data-dir>/uploads/`
+Sau khi tải về được file `minio-uploads.zip`:
+- **Nếu dùng Docker**: giải nén `uploads/` vào thư mục `minio-data/` bên cạnh `docker-compose.yml`. Cấu trúc: `minio-data/uploads/<các file>`
+- **Nếu dùng MinIO binary**: giải nén vào `<minio-data-dir>/uploads/`
 
-Restart MinIO sau khi copy file vao. Vao console http://127.0.0.1:9001 kiem tra bucket `uploads` co data chua.
+Restart MinIO sau khi copy file vào. Vào console http://127.0.0.1:9001 kiểm tra bucket `uploads` có data chưa.
 
-### Buoc 3: Neu khong can du lieu mau
+### Bước 3: Nếu không cần dữ liệu mẫu
 
-Neu chi can demo schema/code, bo qua Buoc 2 va tu tao bucket trong:
-1. Vao http://127.0.0.1:9001 → **Buckets** → **Create Bucket** → ten `uploads` → **Create**
-2. Backend van chay duoc, nhung khoa hoc cu se khong xem video.
+Nếu chỉ cần demo schema/code, bỏ qua Bước 2 và tự tạo bucket trống:
+1. Vào http://127.0.0.1:9001 → **Buckets** → **Create Bucket** → tên `uploads` → **Create**
+2. Backend vẫn chạy được, nhưng các khoá học cũ sẽ không xem được video.
 
-## Chay backend
+## Chạy backend
 
 ```bash
 ./mvnw spring-boot:run
 ```
 
-Backend chay tai http://localhost:8080. Swagger UI: http://localhost:8080/swagger-ui.html
+Backend chạy tại http://localhost:8080. Swagger UI: http://localhost:8080/swagger-ui.html
 
 ## Frontend
 
-Phan frontend nam o **branch `frontend`** cua repo nay:
+Phần frontend nằm ở **branch `frontend`** của repo này:
 
 ```bash
 git checkout frontend
-# Xem README.md trong branch do
+# Xem README.md trong branch đó
 ```
+
+Phải chạy backend trước ở port 8080.
 
 ## VNPay
 
-Code dang dung **sandbox** test merchant cua tac gia. Neu muon dung tai khoan rieng, sua `vnp_TmnCode` va `vnp_HashSecret` trong `ConfigVNPay.java`.
+Code đang dùng **sandbox** test merchant của tác giả. Nếu muốn dùng tài khoản riêng, sửa `vnp_TmnCode` và `vnp_HashSecret` trong `ConfigVNPay.java`.
 
-## Luu y bao mat
+## Lưu ý bảo mật
 
-- File `application.properties` da duoc don sach key that. Truoc khi push len repo cong khai luc nao, hay kiem tra lai bang `git diff` xem co lo key khong.
-- File `.gitignore` da loai tru `.env`, `target/`, `uploads/`, `logs/`.
+- File `application.properties` đã được dọn sạch các key thật. Trước khi push lên repo công khai bất cứ lúc nào, hãy kiểm tra lại bằng `git diff` xem có lộ key không.
+- File `.gitignore` đã loại trừ `.env`, `target/`, `uploads/`, `logs/`, `database/`, `images/`.
