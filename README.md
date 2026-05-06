@@ -1,40 +1,38 @@
 # EduStar Marketplace - Frontend
 
-Vue 3 + Vite frontend cho he thong EduStar Marketplace.
+Vue 3 + Vite frontend cho hệ thống EduStar Marketplace.
 
-## Yeu cau
+## Yêu cầu
 
 - Node.js 18+
-- npm hoac yarn
+- npm hoặc yarn
 
-## Cau hinh
+## Cấu hình
 
 ```bash
-cd frontend
 cp .env.example .env
 ```
 
-Sua file `.env`:
+Sửa file `.env`:
 
-| Bien                  | Y nghia                                       |
+| Biến                  | Ý nghĩa                                       |
 |-----------------------|-----------------------------------------------|
 | `VITE_GOOGLE_CLIENT_ID` | Google OAuth Client ID (https://console.cloud.google.com/) |
-| `VITE_API_BASE_URL`   | URL backend Spring Boot, mac dinh `http://localhost:8080/api` |
+| `VITE_API_BASE_URL`   | URL backend Spring Boot, mặc định `http://localhost:8080/api` |
 
-## Cai dat
+## Cài đặt
 
 ```bash
-cd frontend
 npm install
 ```
 
-## Chay dev
+## Chạy dev
 
 ```bash
 npm run dev
 ```
 
-Frontend chay tai http://localhost:5173
+Frontend chạy tại http://localhost:5173
 
 ## Build production
 
@@ -44,11 +42,11 @@ npm run build
 
 ## Backend
 
-Backend Spring Boot nam o **branch `backend`** cua repo nay:
+Backend Spring Boot nằm ở **branch `backend`** của repo này:
 
 ```bash
 git checkout backend
-# Xem README.md trong branch do
+# Xem README.md trong branch đó
 ```
 
-Phai chay backend truoc o port 8080.
+Phải chạy backend trước ở port 8080.
